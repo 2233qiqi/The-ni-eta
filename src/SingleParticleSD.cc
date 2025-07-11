@@ -20,11 +20,11 @@ SingleParticleSD::~SingleParticleSD()
                << "\n Total Particles Escaping the Source: " << fEscapedParticles
                << "\n Total Energy Leaving the Source: " << G4BestUnit(fEnergyOut, "Energy")
                << "\n Total Energy Returning to the Source: " << G4BestUnit(fEnergyIn, "Energy")
-               << "\n=================================================================================================" << G4endl;
+               << G4endl;
 
         G4cout << "\n======================== Source Absorption Summary (from SingleParticleSD) ========================"
                << "\n Total Energy Deposited in Source: " << G4BestUnit(fEdepTotal, "Energy")
-               << "\n=================================================================================================" << G4endl;
+               << G4endl;
     }
 }
 

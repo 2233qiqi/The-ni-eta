@@ -26,7 +26,6 @@ SteppingAction::~SteppingAction()
     G4cout << "\n========================== Generation Summary (from SteppingAction) =========================="
            << "\n Total Particles Generated in Source: " << fGeneratedParticles
            << "\n Total Initial Energy Generated: " << G4BestUnit(fInitialEnergy, "Energy")
-           << "\n============================================================================================"
            << G4endl;
   }
 }
