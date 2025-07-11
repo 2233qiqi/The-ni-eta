@@ -1,0 +1,18 @@
+/run/initialize
+
+# Initialize GPS
+/gps/particle e-
+/gps/pos/type Point
+/gps/pos/centre 0 0 0 um
+/gps/ang/type iso
+
+# Configure discrete energy spectrum
+/gps/ene/type Arb
+/gps/ene/diffspec 1
+/gps/hist/type arb
+
+/gps/ene/type Mono        
+/gps/ene/mono 0.03 MeV
+
+/gps/number 1000
+/run/beamOn 10
