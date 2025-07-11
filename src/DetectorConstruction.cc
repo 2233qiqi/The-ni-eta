@@ -33,7 +33,6 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
     G4Material *MixNi = new G4Material("Ni", 8.9 * g / cm3, 1);
     MixNi->AddElement(iso_elNi, 100. * perCent);
 
-    // World Material (Vacuum)
     G4NistManager *nist = G4NistManager::Instance();
     G4Material *worldmat = nist->FindOrBuildMaterial("G4_Galactic");
 
@@ -43,13 +42,12 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
     G4LogicalVolume *logicWorld = new G4LogicalVolume(solidWorld, worldmat, "LogicWorld");
     G4VPhysicalVolume *physWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicWorld, "PhysWorld", 0, false, 0, checkOverlaps);
 
-    // World
+    // World 可视化
     G4VisAttributes *worldVisAtt = new G4VisAttributes(G4Colour(1.0, 1.0, 1.0, 0.1));
     worldVisAtt->SetVisibility(true);
     logicWorld->SetVisAttributes(worldVisAtt);
 
     // Ni
-
     G4double Ni63X = 10 * um, Ni63Y = 10 * um, Ni63Z = 0.25 * um; // Ni源的半尺寸
     auto *solidNi63 = new G4Box("SolidNi63", Ni63X, Ni63Y, Ni63Z);
     auto *logicalNi63 = new G4LogicalVolume(solidNi63, MixNi, "LogicNi63");
@@ -63,6 +61,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
 
     // 设置计分体积，如果需要的话
     fScoringVolume = logicWorld;
+    fScoringVolume = logicalNi63;
 
     return physWorld;
 }
@@ -70,26 +69,15 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
 void DetectorConstruction::ConstructSDandField()
 {
     auto sdManager = G4SDManager::GetSDMpointer();
-    G4String BoundarySDName = "sourceBoundarySD";
+    G4String sdName = "MySingleParticleSD";
 
-    if (!sdManager->FindSensitiveDetector(BoundarySDName, false))
+    if (!sdManager->FindSensitiveDetector(sdName, false))
     {
-        G4cout << "Constructing Boundary Sensitive Detector: " << BoundarySDName << G4endl;
+        G4cout << "Constructing the unified Sensitive Detector: " << sdName << G4endl;
 
-        auto *boundarySD = new BoundarySD(BoundarySDName);
+        auto *sd = new SingleParticleSD(sdName);
+        sdManager->AddNewDetector(sd);
 
-        sdManager->AddNewDetector(boundarySD);
-
-        SetSensitiveDetector("LogicNi63", boundarySD, true);
-    }
-
-    G4String NiSDName = "Ni_source_despositsSD";
-
-    if (!sdManager->FindSensitiveDetector(NiSDName, false))
-    {
-        G4cout << "Constructing Boundary Sensitive Detector: " << NiSDName << G4endl;
-        auto *niSD = new NiEnergyDepositSD(NiSDName);
-        sdManager->AddNewDetector(niSD);
-        SetSensitiveDetector("LogicNi63", niSD, true);
+        SetSensitiveDetector("LogicNi63", sd, true);
     }
 }

@@ -32,15 +32,15 @@ void RunAction::BeginOfRunAction(const G4Run *)
 
 }*/
 
-RunAction::RunAction(BoundarySD *sd) : fSD(sd)
+RunAction::RunAction(SingleParticleSD *sd) : fSD(sd)
 {
 }
 
 void RunAction::EndOfRunAction(const G4Run *run)
 {
-    // 获取敏感探测器实例
+
     G4SDManager *sdManager = G4SDManager::GetSDMpointer();
-    BoundarySD *sd = dynamic_cast<BoundarySD *>(
+    SingleParticleSD *sd = dynamic_cast<SingleParticleSD *>(
         sdManager->FindSensitiveDetector("BoundarySD"));
 
     if (sd)

@@ -1,35 +1,26 @@
-#ifndef BoundarySD_h
-#define BoundarySD_h 1
+#ifndef SingleParticleSD_h
+#define SingleParticleSD_h 1
 
 #include "G4VSensitiveDetector.hh"
 #include <mutex>
 
-class G4Step;
-
-class BoundarySD : public G4VSensitiveDetector
+class SingleParticleSD : public G4VSensitiveDetector
 {
 public:
-    BoundarySD(const G4String &name);
-    ~BoundarySD() override;
+    SingleParticleSD(const G4String &name);
+    ~SingleParticleSD() override;
 
     G4bool ProcessHits(G4Step *aStep, G4TouchableHistory *) override;
 
 private:
+    // 穿越
     G4double fEnergyOut;
     G4double fEnergyIn;
-    std::mutex fMutex;
-};
+    G4int fEscapedParticles;
 
-class NiEnergyDepositSD : public G4VSensitiveDetector
-{
-public:
-    NiEnergyDepositSD(const G4String &name);
-    virtual ~NiEnergyDepositSD();
-
-    virtual G4bool ProcessHits(G4Step *step, G4TouchableHistory *) override;
-
-private:
+    // 内部
     G4double fEdepTotal;
+
     std::mutex fMutex;
 };
 

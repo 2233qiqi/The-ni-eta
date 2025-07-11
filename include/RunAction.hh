@@ -8,7 +8,7 @@ class RunAction : public G4UserRunAction
 public:
     RunAction();
     virtual ~RunAction();
-    RunAction(BoundarySD *sd);
+    RunAction(SingleParticleSD *sd);
     virtual void BeginOfRunAction(const G4Run *);
     virtual void EndOfRunAction(const G4Run *);
 
@@ -16,6 +16,6 @@ public:
 
 private:
     G4double fPrimaryEnergy;
-    BoundarySD *fSD = nullptr;
+    SingleParticleSD *fSD = nullptr;
 };
 #endif
