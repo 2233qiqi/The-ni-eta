@@ -47,12 +47,12 @@
 /gps/particle e-
 /gps/pos/type Plane
 /gps/pos/shape Square
-/gps/pos/centre 0 0 0 um
+/gps/pos/centre 0 0 -0.5  um
 /gps/pos/halfx 10 um
 /gps/pos/halfy 10 um
 
+#/gps/direction 0 0 1  //定向Z轴发射
 
-#/gps/direction 0 0 -1  //定向Z轴发射
 /gps/ang/type iso
 /gps/ene/type Arb      #一定要有这个命令
 /gps/hist/type arb

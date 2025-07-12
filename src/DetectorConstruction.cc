@@ -24,7 +24,7 @@ DetectorConstruction::~DetectorConstruction()
 G4VPhysicalVolume *DetectorConstruction::Construct()
 {
     G4bool checkOverlaps = true;
-
+    // NI材料定义
     G4Isotope *isoNi63 = new G4Isotope("Ni63", 28, 63, 62.9296 * g / mole);
     G4Isotope *isoNi64 = new G4Isotope("Ni64", 28, 64, 63.92797 * g / mole);
     G4Element *iso_elNi = new G4Element("CustomNickel", "Ni", 2);
@@ -32,6 +32,13 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
     iso_elNi->AddIsotope(isoNi64, 80. * perCent);
     G4Material *MixNi = new G4Material("Ni", 8.9 * g / cm3, 1);
     MixNi->AddElement(iso_elNi, 100. * perCent);
+
+    // SIC材料定义
+    G4Element *elSi = new G4Element("Silicon", "Si", 14, 28.09 * g / mole);
+    G4Element *elC = new G4Element("Carbon", "C", 6, 12.01 * g / mole);
+    G4Material *SiC = new G4Material("SiliconCarbide", 3.21 * g / cm3, 2);
+    SiC->AddElement(elSi, 1);
+    SiC->AddElement(elC, 1);
 
     G4NistManager *nist = G4NistManager::Instance();
     G4Material *worldmat = nist->FindOrBuildMaterial("G4_Galactic");
@@ -48,19 +55,30 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
     logicWorld->SetVisAttributes(worldVisAtt);
 
     // Ni
-    G4double Ni63X = 10 * um, Ni63Y = 10 * um, Ni63Z = 0.25 * um; // Ni源的半尺寸
+    G4double Ni63X = 10 * um, Ni63Y = 10 * um, Ni63Z = 0.5 * um; // Ni源的半尺寸
     auto *solidNi63 = new G4Box("SolidNi63", Ni63X, Ni63Y, Ni63Z);
     auto *logicalNi63 = new G4LogicalVolume(solidNi63, MixNi, "LogicNi63");
 
-    new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicalNi63, "PhysNi63", logicWorld, false, 0, checkOverlaps);
+    new G4PVPlacement(0, G4ThreeVector(0., 0., -0.5 * um), logicalNi63, "PhysNi63", logicWorld, false, 0, checkOverlaps);
 
-    // Ni
+    // SIC
+    G4double SiCX = 10 * um, SiCY = 10 * um, SiCZ = 5 * um;
+    auto *SolidSiC = new G4Box("SolidSic", SiCX, SiCY, SiCZ);
+    auto *LogicalSiC = new G4LogicalVolume(SolidSiC, SiC, "LogicalSiC ");
+    new G4PVPlacement(0, G4ThreeVector(0., 0., 5.0 * um), LogicalSiC, "PhySiC", logicWorld, false, 0, checkOverlaps);
+
+    // SIC可视化
+    auto *SiCVisAtt = new G4VisAttributes(G4Color(1.0, 0.0, 0.0, 0.7));
+    SiCVisAtt->SetVisibility(true);
+    LogicalSiC->SetVisAttributes(SiCVisAtt);
+
+    // Ni可视化
     auto *niVisAtt = new G4VisAttributes(G4Colour(1.0, 1.0, 0.0, 0.7));
     niVisAtt->SetVisibility(true);
     logicalNi63->SetVisAttributes(niVisAtt);
 
     // 设置计分体积，如果需要的话
-    fScoringVolume = logicWorld;
+    fScoringVolume = LogicalSiC;
     fScoringVolume = logicalNi63;
 
     return physWorld;

@@ -5,23 +5,15 @@
 #include "globals.hh"
 #include <mutex>
 
-class EventAction;
-class G4LogicalVolume; // <--- 修正：加回这一行前向声明
-
 class SteppingAction : public G4UserSteppingAction
 {
 public:
-  SteppingAction(EventAction *eventAction);
+  SteppingAction();
   ~SteppingAction() override;
 
-  void UserSteppingAction(const G4Step *) override;
+  void UserSteppingAction(const G4Step *step) override;
 
 private:
-  // Original variables
-  EventAction *fEventAction;
-  G4LogicalVolume *fScoringVolume;
-
-  // New variables for self-absorption study
   G4double fInitialEnergy;
   G4int fGeneratedParticles;
   std::mutex fMutex;
