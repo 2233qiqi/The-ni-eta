@@ -47,7 +47,7 @@
 /gps/particle e-
 /gps/pos/type Plane
 /gps/pos/shape Square
-/gps/pos/centre 0 0 -0.5  um
+/gps/pos/centre 0 0 -1.0  um
 /gps/pos/halfx 10 um
 /gps/pos/halfy 10 um
 
