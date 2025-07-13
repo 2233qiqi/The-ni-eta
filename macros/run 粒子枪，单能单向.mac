@@ -67,5 +67,5 @@
 /gps/ene/type Mono        
 /gps/ene/mono 0.0174 MeV
 
-/gps/number 10000
-/run/beamOn 1
+/gps/number 1
+/run/beamOn 10000

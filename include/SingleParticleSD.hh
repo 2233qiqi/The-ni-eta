@@ -13,14 +13,7 @@ public:
     G4bool ProcessHits(G4Step *aStep, G4TouchableHistory *) override;
 
 private:
-    // For boundary crossing
-    G4double fEnergyOut;
-    G4double fEnergyIn;
-    G4int fEscapedParticles;
-
-    // For internal deposition
     G4double fEdepTotal;
-
     std::mutex fMutex;
 };
 

@@ -2229,7 +2229,7 @@ CMakeFiles/exampleB1.dir/src/PhysicsList.cc.o: /home/qiqi/Vs\ Code/Geant_Project
   /home/qiqi/Geant4/include/Geant4/G4Element.hh \
   /home/qiqi/Geant4/include/Geant4/G4ElementTable.hh \
   /home/qiqi/Geant4/include/Geant4/G4ElementVector.hh \
-  /home/qiqi/Geant4/include/Geant4/G4EmStandardPhysics.hh \
+  /home/qiqi/Geant4/include/Geant4/G4EmLivermorePhysics.hh \
   /home/qiqi/Geant4/include/Geant4/G4EnvironmentUtils.hh \
   /home/qiqi/Geant4/include/Geant4/G4Exception.hh \
   /home/qiqi/Geant4/include/Geant4/G4ExceptionSeverity.hh \
@@ -2259,8 +2259,6 @@ CMakeFiles/exampleB1.dir/src/PhysicsList.cc.o: /home/qiqi/Vs\ Code/Geant_Project
   /home/qiqi/Geant4/include/Geant4/G4NavigationLevel.icc \
   /home/qiqi/Geant4/include/Geant4/G4NavigationLevelRep.hh \
   /home/qiqi/Geant4/include/Geant4/G4NavigationLevelRep.icc \
-  /home/qiqi/Geant4/include/Geant4/G4OpticalParameters.hh \
-  /home/qiqi/Geant4/include/Geant4/G4OpticalPhysics.hh \
   /home/qiqi/Geant4/include/Geant4/G4OrderedTable.hh \
   /home/qiqi/Geant4/include/Geant4/G4PDefManager.hh \
   /home/qiqi/Geant4/include/Geant4/G4ParticleChange.hh \
@@ -2298,6 +2296,7 @@ CMakeFiles/exampleB1.dir/src/PhysicsList.cc.o: /home/qiqi/Vs\ Code/Geant_Project
   /home/qiqi/Geant4/include/Geant4/G4SteppingControl.hh \
   /home/qiqi/Geant4/include/Geant4/G4String.hh \
   /home/qiqi/Geant4/include/Geant4/G4String.icc \
+  /home/qiqi/Geant4/include/Geant4/G4SystemOfUnits.hh \
   /home/qiqi/Geant4/include/Geant4/G4ThreadLocalSingleton.hh \
   /home/qiqi/Geant4/include/Geant4/G4Threading.hh \
   /home/qiqi/Geant4/include/Geant4/G4ThreeVector.hh \
@@ -4983,8 +4982,6 @@ CMakeFiles/exampleB1.dir/src/SteppingAction.cc.o: /home/qiqi/Vs\ Code/Geant_Proj
 
 /home/qiqi/Geant4/include/Geant4/G4ParticleChangeForDecay.hh:
 
-/home/qiqi/Geant4/include/Geant4/G4OpticalPhysics.hh:
-
 /usr/include/c++/14/unordered_set:
 
 /home/qiqi/Geant4/include/Geant4/G4DecayProcessType.hh:
@@ -5577,6 +5574,8 @@ CMakeFiles/exampleB1.dir/src/SteppingAction.cc.o: /home/qiqi/Vs\ Code/Geant_Proj
 
 /home/qiqi/Geant4/include/Geant4/G4ThreadLocalSingleton.hh:
 
+/home/qiqi/Geant4/include/Geant4/G4EmLivermorePhysics.hh:
+
 /usr/include/c++/14/streambuf:
 
 /home/qiqi/Geant4/include/Geant4/G4SceneHandlerList.hh:
@@ -6023,8 +6022,6 @@ CMakeFiles/exampleB1.dir/src/SteppingAction.cc.o: /home/qiqi/Vs\ Code/Geant_Proj
 
 /home/qiqi/Root/root_v6.34.08.Linux-ubuntu24.04-x86_64-gcc13.3/root/include/TDirectory.h:
 
-/home/qiqi/Geant4/include/Geant4/G4OpticalParameters.hh:
-
 /home/qiqi/Geant4/include/Geant4/CLHEP/Random/RandGeneral.icc:
 
 /home/qiqi/Geant4/include/Geant4/G4GraphicsSystemList.hh:
@@ -6236,8 +6233,6 @@ CMakeFiles/exampleB1.dir/src/SteppingAction.cc.o: /home/qiqi/Vs\ Code/Geant_Proj
 /home/qiqi/Geant4/include/Geant4/G4UImanager.hh:
 
 /home/qiqi/Geant4/include/Geant4/G4UImessenger.hh:
-
-/home/qiqi/Geant4/include/Geant4/G4EmStandardPhysics.hh:
 
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
 
