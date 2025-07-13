@@ -14,6 +14,8 @@ public:
 
 private:
     G4double fEdepTotal;
+    G4double fEnergyOut;
+    G4int fEscapedParticles;
     std::mutex fMutex;
 };
 
