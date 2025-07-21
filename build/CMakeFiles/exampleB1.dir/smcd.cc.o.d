@@ -636,7 +636,7 @@ CMakeFiles/exampleB1.dir/smcd.cc.o: \
  /home/qiqi/Geant4/include/Geant4/G4Ions.hh \
  /home/qiqi/Geant4/include/Geant4/G4IsotopeProperty.hh \
  /home/qiqi/Geant4/include/Geant4/G4VIsotopeTable.hh \
- /home/qiqi/Geant4/include/Geant4/QBBC.hh \
+ /home/qiqi/Vs\ Code/Geant_Project/Study-master/The\ ni\ eta/include/PhysicsList.hh \
  /home/qiqi/Geant4/include/Geant4/G4VModularPhysicsList.hh \
  /home/qiqi/Geant4/include/Geant4/G4VPhysicsConstructor.hh \
  /home/qiqi/Geant4/include/Geant4/G4PhysicsListHelper.hh \
@@ -650,8 +650,6 @@ CMakeFiles/exampleB1.dir/smcd.cc.o: \
  /home/qiqi/Geant4/include/Geant4/G4MaterialCutsCouple.hh \
  /home/qiqi/Geant4/include/Geant4/G4ProductionCuts.hh \
  /home/qiqi/Geant4/include/Geant4/G4MCCIndexConversionTable.hh \
- /home/qiqi/Vs\ Code/Geant_Project/Study-master/The\ ni\ eta/include/PhysicsList.hh \
- /home/qiqi/Geant4/include/Geant4/G4VModularPhysicsList.hh \
  /home/qiqi/Vs\ Code/Geant_Project/Study-master/The\ ni\ eta/include/DetectorConstruction.hh \
  /home/qiqi/Geant4/include/Geant4/G4VUserDetectorConstruction.hh \
  /home/qiqi/Geant4/include/Geant4/G4LogicalVolume.hh \

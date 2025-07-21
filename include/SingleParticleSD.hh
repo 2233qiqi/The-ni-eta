@@ -1,5 +1,5 @@
 #ifndef SingleParticleSD_h
-#define SingleParticleSD_h 1
+#define SingleParticleSD_h
 
 #include "G4VSensitiveDetector.hh"
 #include <mutex>
@@ -16,6 +16,9 @@ private:
     G4double fEdepTotal;
     G4double fEnergyOut;
     G4int fEscapedParticles;
+
+    G4int fBackscatteredParticles;
+    G4double fBackscatteredEnergy;
     std::mutex fMutex;
 };
 
