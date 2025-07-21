@@ -20,7 +20,7 @@
 /vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
 /vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 7
 
-/vis/scene/endOfEventAction accumulate 900
+/vis/scene/endOfEventAction accumulate 100
 /vis/set/textColour green
 
 /vis/set/textLayout right
@@ -45,9 +45,13 @@
 # Initialize GPS
 
 /gps/particle e-
+
 /gps/pos/type Plane 
 /gps/pos/shape Square
-/gps/pos/centre 0 0 -0.25 um
+/gps/pos/centre 0 0 -2.5 um
+/gps/ang/mintheta 0 deg
+/gps/ang/maxtheta 180 deg
+
 /gps/pos/halfx 10 um
 /gps/pos/halfy 10 um
 

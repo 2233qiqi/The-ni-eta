@@ -225,6 +225,30 @@ src/EventAction.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/exampleB1.dir/build.make CMakeFiles/exampleB1.dir/src/EventAction.cc.s
 .PHONY : src/EventAction.cc.s
 
+src/NiSelfAbsorbSD.o: src/NiSelfAbsorbSD.cc.o
+.PHONY : src/NiSelfAbsorbSD.o
+
+# target to build an object file
+src/NiSelfAbsorbSD.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exampleB1.dir/build.make CMakeFiles/exampleB1.dir/src/NiSelfAbsorbSD.cc.o
+.PHONY : src/NiSelfAbsorbSD.cc.o
+
+src/NiSelfAbsorbSD.i: src/NiSelfAbsorbSD.cc.i
+.PHONY : src/NiSelfAbsorbSD.i
+
+# target to preprocess a source file
+src/NiSelfAbsorbSD.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exampleB1.dir/build.make CMakeFiles/exampleB1.dir/src/NiSelfAbsorbSD.cc.i
+.PHONY : src/NiSelfAbsorbSD.cc.i
+
+src/NiSelfAbsorbSD.s: src/NiSelfAbsorbSD.cc.s
+.PHONY : src/NiSelfAbsorbSD.s
+
+# target to generate assembly for a file
+src/NiSelfAbsorbSD.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exampleB1.dir/build.make CMakeFiles/exampleB1.dir/src/NiSelfAbsorbSD.cc.s
+.PHONY : src/NiSelfAbsorbSD.cc.s
+
 src/PhysicsList.o: src/PhysicsList.cc.o
 .PHONY : src/PhysicsList.o
 
@@ -390,6 +414,9 @@ help:
 	@echo "... src/EventAction.o"
 	@echo "... src/EventAction.i"
 	@echo "... src/EventAction.s"
+	@echo "... src/NiSelfAbsorbSD.o"
+	@echo "... src/NiSelfAbsorbSD.i"
+	@echo "... src/NiSelfAbsorbSD.s"
 	@echo "... src/PhysicsList.o"
 	@echo "... src/PhysicsList.i"
 	@echo "... src/PhysicsList.s"
