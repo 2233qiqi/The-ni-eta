@@ -15,7 +15,7 @@ find_package(Qt5 REQUIRED COMPONENTS Widgets)
 find_package(TBB REQUIRED)
 
 #----------------------------------------------------------------------------
-set(ROOT_DIR "/home/qiqi/Root/root_v6.34.08.Linux-ubuntu24.04-x86_64-gcc13.3/root")
+set(ROOT_DIR "/home/qiqi/ROOT/root")
 set(ROOT_INCLUDE_DIRS "${ROOT_DIR}/include")
 set(ROOT_LIBRARIES 
     -L"${ROOT_DIR}/lib"
