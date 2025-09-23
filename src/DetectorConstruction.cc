@@ -56,17 +56,17 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
     logicWorld->SetVisAttributes(worldVisAtt);
 
     // Ni
-    G4double Ni63X = 10 * um, Ni63Y = 10 * um, Ni63Z = 2.5 * um; // Ni源的半尺寸
+    G4double Ni63X = 5 * um, Ni63Y = 5 * um, Ni63Z = 1.5 * um; // Ni源的半尺寸
     auto *solidNi63 = new G4Box("SolidNi63", Ni63X, Ni63Y, Ni63Z);
     auto *logicalNi63 = new G4LogicalVolume(solidNi63, MixNi, "LogicNi63");
 
-    new G4PVPlacement(0, G4ThreeVector(0., 0., -5 * um), logicalNi63, "PhysNi63", logicWorld, false, 0, checkOverlaps);
+    new G4PVPlacement(0, G4ThreeVector(0., 0., -1.5 * um), logicalNi63, "PhysNi63", logicWorld, false, 0, checkOverlaps);
 
     // SIC
     G4double SiCX = 10 * um, SiCY = 10 * um, SiCZ = 5 * um;
     auto *SolidSiC = new G4Box("SolidSic", SiCX, SiCY, SiCZ);
     auto *LogicalSiC = new G4LogicalVolume(SolidSiC, SiC, "LogicalSiC ");
-    new G4PVPlacement(0, G4ThreeVector(0., 0., 5.0 * um), LogicalSiC, "PhySiC", logicWorld, false, 0, checkOverlaps);
+    new G4PVPlacement(0, G4ThreeVector(0., 0., 5 * um), LogicalSiC, "PhySiC", logicWorld, false, 0, checkOverlaps);
 
     // SIC可视化
     auto *SiCVisAtt = new G4VisAttributes(G4Color(1.0, 0.0, 0.0, 0.7));

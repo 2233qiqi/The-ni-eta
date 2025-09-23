@@ -663,7 +663,7 @@ CMakeFiles/exampleB1.dir/smcd.cc.o: /home/qiqi/geant4/The-ni-eta/smcd.cc \
  /home/qiqi/geant4/The-ni-eta/include/ActionInitialization.hh \
  /usr/local/include/Geant4/G4VUserActionInitialization.hh \
  /home/qiqi/geant4/The-ni-eta/include/PrimaryGenerator.hh \
- /usr/local/include/Geant4/G4Event.hh \
+ /usr/local/include/Geant4/G4VUserPrimaryGeneratorAction.hh \
  /usr/local/include/Geant4/G4GeneralParticleSource.hh \
  /usr/local/include/Geant4/G4SingleParticleSource.hh \
  /usr/local/include/Geant4/G4VPrimaryGenerator.hh \
@@ -674,10 +674,7 @@ CMakeFiles/exampleB1.dir/smcd.cc.o: /home/qiqi/geant4/The-ni-eta/smcd.cc \
  /usr/local/include/Geant4/G4SPSEneDistribution.hh \
  /usr/local/include/Geant4/G4GeneralParticleSourceMessenger.hh \
  /usr/local/include/Geant4/G4GeneralParticleSourceData.hh \
- /usr/local/include/Geant4/G4ParticleDefinition.hh \
- /usr/local/include/Geant4/G4ParticleGun.hh \
- /usr/local/include/Geant4/G4ParticleTable.hh \
- /usr/local/include/Geant4/G4VUserPrimaryGeneratorAction.hh \
+ /usr/local/include/Geant4/G4Event.hh \
  /home/qiqi/geant4/The-ni-eta/include/RunAction.hh \
  /usr/local/include/Geant4/G4UserRunAction.hh \
  /home/qiqi/geant4/The-ni-eta/include/EventAction.hh \

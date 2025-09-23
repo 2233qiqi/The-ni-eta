@@ -16,6 +16,7 @@ private:
     G4double fEdepTotal;
     G4double fEnergyOut;
     G4int fEscapedParticles;
+    
 
     G4int fBackscatteredParticles;
     G4double fBackscatteredEnergy;

@@ -21,10 +21,8 @@ SingleParticleSD::~SingleParticleSD()
     if (G4Threading::IsMasterThread())
     {
         G4cout
-            << "\n Total Energy Deposited in SIC: " << G4BestUnit(fEdepTotal, "Energy")
             << "\n Total Energy of Escaping Particles: " << G4BestUnit(fEnergyOut, "Energy")
-            << "\n   -> Backscattered Energy:         " << G4BestUnit(fBackscatteredEnergy, "Energy")
-
+            <<"\n All Escaping Particles: " << fEscapedParticles 
             << G4endl;
     }
 }
