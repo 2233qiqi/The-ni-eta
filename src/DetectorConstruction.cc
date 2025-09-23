@@ -63,7 +63,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
     new G4PVPlacement(0, G4ThreeVector(0., 0., -1.5 * um), logicalNi63, "PhysNi63", logicWorld, false, 0, checkOverlaps);
 
     // SIC
-    G4double SiCX = 10 * um, SiCY = 10 * um, SiCZ = 5 * um;
+    G4double SiCX = 5 * um, SiCY = 5 * um, SiCZ = 5 * um;
     auto *SolidSiC = new G4Box("SolidSic", SiCX, SiCY, SiCZ);
     auto *LogicalSiC = new G4LogicalVolume(SolidSiC, SiC, "LogicalSiC ");
     new G4PVPlacement(0, G4ThreeVector(0., 0., 5 * um), LogicalSiC, "PhySiC", logicWorld, false, 0, checkOverlaps);
