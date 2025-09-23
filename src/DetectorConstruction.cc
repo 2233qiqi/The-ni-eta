@@ -45,7 +45,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
     G4Material *worldmat = nist->FindOrBuildMaterial("G4_Galactic");
 
     // World
-    G4double worldX = 200 * um, worldY = 200 * um, worldZ = 200 * um;
+    G4double worldX = 2 * cm, worldY = 2 * cm, worldZ = 2 * cm;
     auto *solidWorld = new G4Box("SoildWorld", worldX, worldY, worldZ);
     G4LogicalVolume *logicWorld = new G4LogicalVolume(solidWorld, worldmat, "LogicWorld");
     G4VPhysicalVolume *physWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicWorld, "PhysWorld", 0, false, 0, checkOverlaps);
@@ -56,11 +56,11 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
     logicWorld->SetVisAttributes(worldVisAtt);
 
     // Ni
-    G4double Ni63X = 5 * um, Ni63Y = 5 * um, Ni63Z = 2.5 * um; // Ni源的半尺寸
+    G4double Ni63X = 0.5 * cm, Ni63Y = 0.5 * cm, Ni63Z = 2.0 * um; 
     auto *solidNi63 = new G4Box("SolidNi63", Ni63X, Ni63Y, Ni63Z);
     auto *logicalNi63 = new G4LogicalVolume(solidNi63, MixNi, "LogicNi63");
 
-    new G4PVPlacement(0, G4ThreeVector(0., 0., -2.5* um), logicalNi63, "PhysNi63", logicWorld, false, 0, checkOverlaps);
+    new G4PVPlacement(0, G4ThreeVector(0., 0., -2.0* um), logicalNi63, "PhysNi63", logicWorld, false, 0, checkOverlaps);
 
     
     // Ni可视化

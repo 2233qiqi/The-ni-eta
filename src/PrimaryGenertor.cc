@@ -17,23 +17,24 @@ PrimaryGenerator::PrimaryGenerator()
 
     fGPS->GetCurrentSource()->GetPosDist()->SetPosDisType("Volume");
     fGPS->GetCurrentSource()->GetPosDist()->SetPosDisShape("Para");
-    fGPS->GetCurrentSource()->GetPosDist()->SetCentreCoords(G4ThreeVector(0., 0., -2.5*um));
-    fGPS->GetCurrentSource()->GetPosDist()->SetHalfX(5*um);
-    fGPS->GetCurrentSource()->GetPosDist()->SetHalfY(5*um);
-    fGPS->GetCurrentSource()->GetPosDist()->SetHalfZ(2.5*um);
+    fGPS->GetCurrentSource()->GetPosDist()->SetCentreCoords(G4ThreeVector(0., 0., -2.0 *um));
+    fGPS->GetCurrentSource()->GetPosDist()->SetHalfX(0.5*cm);
+    fGPS->GetCurrentSource()->GetPosDist()->SetHalfY(0.5*cm);
+    fGPS->GetCurrentSource()->GetPosDist()->SetHalfZ(2.0 *um);
 
     // 方向
     //fGPS->GetCurrentSource()->GetAngDist()->SetAngDistType("iso");
 
-    fGPS->GetCurrentSource()->GetAngDist()->SetAngDistType("directional");
-    fGPS->GetCurrentSource()->GetAngDist()->SetParticleMomentumDirection(G4ThreeVector(0.0, 0.0, 1.0));
-
+   auto angDist = fGPS->GetCurrentSource()->GetAngDist();
+   angDist->SetAngDistType("planar");  
+   angDist->SetParticleMomentumDirection(G4ThreeVector(0.0, 0.0, 1.0));  
     //能谱
-    auto eneDist = fGPS->GetCurrentSource()->GetEneDist();
-    eneDist->SetEnergyDisType("Arb");
-    eneDist->ArbEnergyHistoFile("Ni_data.dat");
+   auto eneDist = fGPS->GetCurrentSource()->GetEneDist();
+   eneDist->SetEnergyDisType("Arb");
+   eneDist->ArbEnergyHistoFile("Ni_data.dat");
 
     eneDist->ArbInterpolate("Spline");
+
 }
 
 PrimaryGenerator::~PrimaryGenerator()
