@@ -79,9 +79,6 @@ void DetectorConstruction::ConstructSDandField()
 {
     auto sdManager = G4SDManager::GetSDMpointer();
 
-
-   
-   
     G4String spSDName = "SingleParticleSD";
     if (!sdManager->FindSensitiveDetector(spSDName, false))
     {

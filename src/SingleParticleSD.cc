@@ -42,7 +42,6 @@ G4bool SingleParticleSD::ProcessHits(G4Step *aStep, G4TouchableHistory *)
 
         if (preVolume == sensitiveVolume && postVolume != sensitiveVolume)
         {
-
             G4double kineticEnergy = preStepPoint->GetKineticEnergy();
             fEnergyOut += kineticEnergy;
             fEscapedParticles++;
