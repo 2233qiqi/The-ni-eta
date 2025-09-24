@@ -17,10 +17,10 @@ PrimaryGenerator::PrimaryGenerator()
 
     fGPS->GetCurrentSource()->GetPosDist()->SetPosDisType("Volume");
     fGPS->GetCurrentSource()->GetPosDist()->SetPosDisShape("Para");
-    fGPS->GetCurrentSource()->GetPosDist()->SetCentreCoords(G4ThreeVector(0., 0., -0.25 *um));
+    fGPS->GetCurrentSource()->GetPosDist()->SetCentreCoords(G4ThreeVector(0., 0., -2.5  *um));
     fGPS->GetCurrentSource()->GetPosDist()->SetHalfX(0.5*cm);
     fGPS->GetCurrentSource()->GetPosDist()->SetHalfY(0.5*cm);
-    fGPS->GetCurrentSource()->GetPosDist()->SetHalfZ(0.25 *um);
+    fGPS->GetCurrentSource()->GetPosDist()->SetHalfZ(2.5*um);
 
     // 方向
     //fGPS->GetCurrentSource()->GetAngDist()->SetAngDistType("iso");

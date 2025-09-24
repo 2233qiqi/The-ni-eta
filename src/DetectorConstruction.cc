@@ -56,11 +56,11 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
     logicWorld->SetVisAttributes(worldVisAtt);
 
     // Ni
-    G4double Ni63X = 0.5 * cm, Ni63Y = 0.5 * cm, Ni63Z = 0.25 * um; 
+    G4double Ni63X = 0.5 * cm, Ni63Y = 0.5 * cm, Ni63Z = 2.5  * um; 
     auto *solidNi63 = new G4Box("SolidNi63", Ni63X, Ni63Y, Ni63Z);
     auto *logicalNi63 = new G4LogicalVolume(solidNi63, MixNi, "LogicNi63");
 
-    new G4PVPlacement(0, G4ThreeVector(0., 0., -0.25* um), logicalNi63, "PhysNi63", logicWorld, false, 0, checkOverlaps);
+    new G4PVPlacement(0, G4ThreeVector(0., 0., -2.5  * um), logicalNi63, "PhysNi63", logicWorld, false, 0, checkOverlaps);
 
     
     // Ni可视化
@@ -80,14 +80,7 @@ void DetectorConstruction::ConstructSDandField()
     auto sdManager = G4SDManager::GetSDMpointer();
 
 
-    G4String niSDName = "NiSelfAbsorbSD";
-    if (!sdManager->FindSensitiveDetector(niSDName, false))
-    {
-        auto *sd_ni = new NiSelfAbsorbSD(niSDName);
-        sdManager->AddNewDetector(sd_ni);
-        SetSensitiveDetector("LogicNi63", sd_ni, true);
-    }
-
+   
    
     G4String spSDName = "SingleParticleSD";
     if (!sdManager->FindSensitiveDetector(spSDName, false))
